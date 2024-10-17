@@ -24,6 +24,7 @@ Table users {
   first_namne varchar
   second_name varchar
   emial varchar
+  password varchar
   bio TEXT
   profile_picture_path varchar
   created_at timestamp
@@ -121,6 +122,19 @@ Table messages {
   is_read boolean
 }
 
+Table user_settings {
+  id integer [primary key]
+  user_id integer
+  show_friends boolean
+  show_profile_pic boolean
+  show_bio boolean
+  show_posts boolean
+  show_likes boolean
+  show_comments boolean
+  created_at timestamp
+  updated_at timestamp
+}
+
 
 Ref: users.id - user_status.user_id
 Ref: users.id < friends.user_one
@@ -137,9 +151,6 @@ Ref: post_comments.parent_comment_id > post_comments.id
 Ref: user_images.user_id > users.id
 Ref: follows.follower_id > users.id
 Ref: follows.followed_id > users.id
-
-
-DODAC USER_PRIVACY_SETTINGS
 
 
 
