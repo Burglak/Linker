@@ -1,0 +1,148 @@
+users
+friends
+posts
+comments
+likes
+images
+follows
+messages
+groups **
+
+użytkownicy moga komunikowac sie miedzy sobą 1-1.
+moga sie zapraszac do znajomych 
+moga wstawiac zdjecia na profilu, opisy oraz posty
+inni uzytkownicy moga zobaczyc te posty jesli sa znajomymi z autorem
+posty moga miec zdjecia
+wiadomosci moga miec zdjecia
+mozliwosc likowania postow
+mozliwosc komentowania pod postami (nested comments)
+historia chatow
+
+
+Table users {
+  id integer [primary key]
+  first_namne varchar
+  second_name varchar
+  emial varchar
+  bio TEXT
+  profile_picture_path varchar
+  created_at timestamp
+  last_login timestamp
+  role varchar // admin, support, user
+}
+
+Table user_status {
+  id integer [primary key]
+  user_id integer
+  is_active boolean
+  is_suspended boolean
+  suspended_until timestamp
+  is_verified boolean
+}
+
+Table friends {
+  id integer [primary key]
+  user_one integer  // V
+  user_two integer // unique pair
+  status varchar // default: pending | accepted
+  created_at timestamp
+}
+
+Table posts {
+  id integer [primary key]
+  user_id integer
+  upvotes integer
+  downvotes integer
+  status varchar
+  created_at timestamp
+  category_id integer
+  visibility enum // public, friends only
+}
+
+Table post_images {
+  id integer [primary key]
+  post_id integer
+  path varchar
+  is_primary boolean
+  created_at timestamp
+}
+
+Table post_reactions {
+  id integer [primary key]
+  post_id integer
+  reaction varchar // like, dislike
+  user_id integer
+  created_at timestamp
+}
+
+Table post_reports {
+  id integer [primary key]
+  post_id integer
+  user_id integer
+  report_type enum // type of the violation
+  created_at timestamp
+}
+
+Table post_comments {
+  id integer [primary key]
+  post_id integer
+  user_id integer
+  content text
+  parent_comment_id integer //nullable
+  created_at timestamp
+}
+
+Table post_category {
+  id integer [primary key]
+  name varchar
+}
+
+Table user_images {
+  id integer [primary key]
+  user_id integer
+  image_path varchar
+  visibility enum //public, friends only
+  created_at timestamp
+}
+
+Table follows {
+  id integer [primary key]
+  follower_id integer
+  followed_id integer //unique pair
+  created_at timestamp
+}
+
+Table messages {
+  id integer [primary key]
+  sender_id integer
+  recipient_id integer
+  content text // add media
+  created_at timestamp
+  is_read boolean
+}
+
+
+Ref: users.id - user_status.user_id
+Ref: users.id < friends.user_one
+Ref: users.id < friends.user_two
+Ref: users.id < posts.user_id
+Ref: post_images.post_id - posts.id
+Ref: post_reactions.user_id > users.id
+Ref: post_reactions.post_id > posts.id
+Ref: post_reports.post_id > posts.id
+Ref: post_reports.user_id > users.id
+Ref: post_comments.user_id > users.id
+Ref: post_comments.post_id > posts.id
+Ref: post_comments.parent_comment_id > post_comments.id
+Ref: user_images.user_id > users.id
+Ref: follows.follower_id > users.id
+Ref: follows.followed_id > users.id
+
+
+DODAC USER_PRIVACY_SETTINGS
+
+
+
+
+
+
