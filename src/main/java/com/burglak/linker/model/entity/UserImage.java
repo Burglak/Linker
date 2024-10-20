@@ -29,8 +29,9 @@ public class UserImage {
     @Column(name = "path", nullable = false)
     private String path;
 
-    @Column(name = "visibility", nullable = false)
-    private UserImageVisibility visibility;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_image_visibility", nullable = false)
+    private UserImageVisibility userImageVisibility;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

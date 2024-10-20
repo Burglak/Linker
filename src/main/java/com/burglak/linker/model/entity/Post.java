@@ -30,8 +30,9 @@ public class Post {
 
     private Long downvotes;
 
-    @Column(name = "visibility", nullable = false)
-    private PostVisibility visibility;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "post_visibility", nullable = false)
+    private PostVisibility postVisibility;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", nullable = false)

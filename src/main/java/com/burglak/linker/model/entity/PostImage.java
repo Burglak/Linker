@@ -25,8 +25,8 @@ public class PostImage {
     @JoinColumn(name = "post_id", nullable = false)
     private Post post;
 
-    @Column(name = "path", nullable = false)
-    private String path;
+    @Column(name = "image_path", nullable = false)
+    private String imagePath;
 
     @Column(name = "is_primary", nullable = false)
     private boolean isPrimary;

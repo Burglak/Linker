@@ -30,6 +30,8 @@ public class PostReaction {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "post_reaction_type", nullable = false)
     private PostReactionType postReactionType;
 
     @CreationTimestamp
