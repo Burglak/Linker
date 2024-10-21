@@ -45,6 +45,9 @@ public class User {
     @Column(name = "role", nullable = false)
     private UserRole userRole;
 
+    @Column(name = "is_active")
+    private boolean isActive;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;

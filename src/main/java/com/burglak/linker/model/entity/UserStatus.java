@@ -24,9 +24,6 @@ public class UserStatus {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "is_active")
-    private boolean isActive;
-
     @Column(name = "is_suspended", nullable = false, columnDefinition = "boolean default false") //make this field false by default
     private boolean isSuspended;
 

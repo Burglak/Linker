@@ -17,8 +17,6 @@ public class UserStatusDto {
 
     private UserDto user;
 
-    private boolean isActive;
-
     private boolean isSuspended;
 
     private Timestamp suspendedUntil;
