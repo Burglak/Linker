@@ -4,7 +4,9 @@ import com.burglak.linker.dto.PostDto;
 import com.burglak.linker.mapper.Mapper;
 import com.burglak.linker.model.entity.Post;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PostMapper implements Mapper<Post, PostDto> {
 
     private ModelMapper modelMapper;

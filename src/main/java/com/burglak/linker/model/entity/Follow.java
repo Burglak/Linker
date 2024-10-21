@@ -23,11 +23,11 @@ public class Follow {
 
     @ManyToOne
     @JoinColumn(name = "follower_id", nullable = false)
-    private User follower_id;
+    private User follower;
 
     @ManyToOne
     @JoinColumn(name = "followed_id", nullable = false)
-    private User followed_id;
+    private User followed;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

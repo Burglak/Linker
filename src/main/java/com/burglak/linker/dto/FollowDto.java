@@ -15,9 +15,9 @@ public class FollowDto {
 
     private Long id;
 
-    private UserDto follower_id;
+    private UserDto follower;
 
-    private UserDto followed_id;
+    private UserDto followed;
 
     private Timestamp createdAt;
 

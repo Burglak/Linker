@@ -4,7 +4,9 @@ import com.burglak.linker.dto.UserSettingsDto;
 import com.burglak.linker.mapper.Mapper;
 import com.burglak.linker.model.entity.UserSettings;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserSettingsMapper implements Mapper<UserSettings, UserSettingsDto> {
 
     private ModelMapper modelMapper;

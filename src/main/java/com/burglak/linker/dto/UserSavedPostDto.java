@@ -1,7 +1,5 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.model.entity.Post;
-import com.burglak.linker.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,9 +15,9 @@ public class UserSavedPostDto {
 
     private Long id;
 
-    private User user;
+    private UserDto user;
 
-    private Post post;
+    private PostDto post;
 
     private Timestamp createdAt;
 

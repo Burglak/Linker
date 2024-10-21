@@ -15,9 +15,9 @@ public class MessageDto {
 
     private Long id;
 
-    private UserDto sender_id;
+    private UserDto sender;
 
-    private UserDto recipient_id;
+    private UserDto recipient;
 
     private String content;
 

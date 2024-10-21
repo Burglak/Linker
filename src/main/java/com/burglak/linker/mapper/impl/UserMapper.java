@@ -4,7 +4,9 @@ import com.burglak.linker.dto.UserDto;
 import com.burglak.linker.mapper.Mapper;
 import com.burglak.linker.model.entity.User;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper implements Mapper<User, UserDto> {
 
     private ModelMapper modelMapper;

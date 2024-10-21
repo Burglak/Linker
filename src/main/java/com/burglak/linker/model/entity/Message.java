@@ -23,11 +23,11 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name = "sender_id", nullable = false)
-    private User sender_id;
+    private User sender;
 
     @ManyToOne
     @JoinColumn(name = "recipient_id", nullable = false)
-    private User recipient_id;
+    private User recipient;
 
     @Column(name = "content", nullable = false)
     private String content;

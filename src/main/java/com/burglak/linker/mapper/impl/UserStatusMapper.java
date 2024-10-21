@@ -4,7 +4,9 @@ import com.burglak.linker.dto.UserStatusDto;
 import com.burglak.linker.mapper.Mapper;
 import com.burglak.linker.model.entity.UserStatus;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserStatusMapper implements Mapper<UserStatus, UserStatusDto> {
 
     private ModelMapper modelMapper;
