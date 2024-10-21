@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class UserSettingsMapper implements Mapper<UserSettings, UserSettingsDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public UserSettingsMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

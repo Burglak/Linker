@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class FriendMapper implements Mapper<Friend, FriendDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public FriendMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class MessageMapper implements Mapper<Message, MessageDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public MessageMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

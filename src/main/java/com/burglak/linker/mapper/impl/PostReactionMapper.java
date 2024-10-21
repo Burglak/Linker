@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class PostReactionMapper implements Mapper<PostReaction, PostReactionDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public PostReactionMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

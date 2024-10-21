@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class PostCategoryMapper implements Mapper<PostCategory, PostCategoryDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public PostCategoryMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

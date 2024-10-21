@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class UserImageMapper implements Mapper<UserImage, UserImageDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public UserImageMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;

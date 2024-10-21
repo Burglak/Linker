@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 
 public class PostReportMapper implements Mapper<PostReport, PostReportDto> {
 
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     public PostReportMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
