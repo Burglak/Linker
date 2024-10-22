@@ -90,7 +90,7 @@ public class MapperUnitTest {
         assertThat(followerEntity.getBio()).isEqualTo(followerDto.getBio());
         assertThat(followerEntity.getProfilePicturePath()).isEqualTo(followerDto.getProfilePicturePath());
         assertThat(followerEntity.getUserRole()).isEqualTo(followerDto.getUserRole());
-        assertThat(followerEntity.isActive()).isEqualTo(followerDto.isActive());
+        assertThat(followerEntity.getIsActive()).isEqualTo(followerDto.getIsActive());
         assertThat(followerEntity.getCreatedAt()).isEqualTo(followerDto.getCreatedAt());
         assertThat(followerEntity.getLastLogin()).isEqualTo(followerDto.getLastLogin());
 
@@ -107,7 +107,7 @@ public class MapperUnitTest {
         assertThat(followedEntity.getBio()).isEqualTo(followedDto.getBio());
         assertThat(followedEntity.getProfilePicturePath()).isEqualTo(followedDto.getProfilePicturePath());
         assertThat(followedEntity.getUserRole()).isEqualTo(followedDto.getUserRole());
-        assertThat(followedEntity.isActive()).isEqualTo(followedDto.isActive());
+        assertThat(followedEntity.getIsActive()).isEqualTo(followedDto.getIsActive());
         assertThat(followedEntity.getCreatedAt()).isEqualTo(followedDto.getCreatedAt());
         assertThat(followedEntity.getLastLogin()).isEqualTo(followedDto.getLastLogin());
 
@@ -132,7 +132,7 @@ public class MapperUnitTest {
         assertThat(mappedFollowerDto.getBio()).isEqualTo(followerEntity.getBio());
         assertThat(mappedFollowerDto.getProfilePicturePath()).isEqualTo(followerEntity.getProfilePicturePath());
         assertThat(mappedFollowerDto.getUserRole()).isEqualTo(followerEntity.getUserRole());
-        assertThat(mappedFollowerDto.isActive()).isEqualTo(followerEntity.isActive());
+        assertThat(mappedFollowerDto.getIsActive()).isEqualTo(followerEntity.getIsActive());
         assertThat(mappedFollowerDto.getCreatedAt()).isEqualTo(followerEntity.getCreatedAt());
         assertThat(mappedFollowerDto.getLastLogin()).isEqualTo(followerEntity.getLastLogin());
 
@@ -147,7 +147,7 @@ public class MapperUnitTest {
         assertThat(mappedFollowedDto.getBio()).isEqualTo(followedEntity.getBio());
         assertThat(mappedFollowedDto.getProfilePicturePath()).isEqualTo(followedEntity.getProfilePicturePath());
         assertThat(mappedFollowedDto.getUserRole()).isEqualTo(followedEntity.getUserRole());
-        assertThat(mappedFollowedDto.isActive()).isEqualTo(followedEntity.isActive());
+        assertThat(mappedFollowedDto.getIsActive()).isEqualTo(followedEntity.getIsActive());
         assertThat(mappedFollowedDto.getCreatedAt()).isEqualTo(followedEntity.getCreatedAt());
         assertThat(mappedFollowedDto.getLastLogin()).isEqualTo(followedEntity.getLastLogin());
 
@@ -166,7 +166,7 @@ public class MapperUnitTest {
         //assertions on entity after mapping
         assertThat(friendEntity).isNotNull();
         assertThat(friendEntity.getId()).isEqualTo(friendDto.getId());
-        assertThat(friendEntity.isAccepted()).isEqualTo(friendDto.isAccepted());
+        assertThat(friendEntity.getIsAccepted()).isEqualTo(friendDto.getIsAccepted());
         assertThat(friendEntity.getCreatedAt()).isEqualTo(friendDto.getCreatedAt());
 
         //check userOne fields
@@ -194,7 +194,7 @@ public class MapperUnitTest {
         //assertions on dto after reverse mapping
         assertThat(mappedBackFriendDto).isNotNull();
         assertThat(mappedBackFriendDto.getId()).isEqualTo(friendEntity.getId());
-        assertThat(mappedBackFriendDto.isAccepted()).isEqualTo(friendEntity.isAccepted());
+        assertThat(mappedBackFriendDto.getIsAccepted()).isEqualTo(friendEntity.getIsAccepted());
         assertThat(mappedBackFriendDto.getCreatedAt()).isEqualTo(friendEntity.getCreatedAt());
 
         //re-check userOne fields
@@ -218,7 +218,7 @@ public class MapperUnitTest {
         assertThat(messageEntity).isNotNull();
         assertThat(messageEntity.getId()).isEqualTo(messageDto.getId());
         assertThat(messageEntity.getContent()).isEqualTo(messageDto.getContent());
-        assertThat(messageEntity.isRead()).isEqualTo(messageDto.isRead());
+        assertThat(messageEntity.getIsRead()).isEqualTo(messageDto.getIsRead());
         assertThat(messageEntity.getCreatedAt()).isEqualTo(messageDto.getCreatedAt());
 
         //check sender and recipient fields
@@ -237,7 +237,7 @@ public class MapperUnitTest {
         assertThat(mappedBackMessageDto).isNotNull();
         assertThat(mappedBackMessageDto.getId()).isEqualTo(messageEntity.getId());
         assertThat(mappedBackMessageDto.getContent()).isEqualTo(messageEntity.getContent());
-        assertThat(mappedBackMessageDto.isRead()).isEqualTo(messageEntity.isRead());
+        assertThat(mappedBackMessageDto.getIsRead()).isEqualTo(messageEntity.getIsRead());
         assertThat(mappedBackMessageDto.getCreatedAt()).isEqualTo(messageEntity.getCreatedAt());
 
         //re-check sender and recipient fields
@@ -383,12 +383,12 @@ public class MapperUnitTest {
         //assertions on entity after mapping
         assertThat(userSettingsEntity).isNotNull();
         assertThat(userSettingsEntity.getId()).isEqualTo(userSettingsDto.getId());
-        assertThat(userSettingsEntity.isShowFriends()).isEqualTo(userSettingsDto.isShowFriends());
-        assertThat(userSettingsEntity.isShowProfilePicture()).isEqualTo(userSettingsDto.isShowProfilePicture());
-        assertThat(userSettingsEntity.isShowBio()).isEqualTo(userSettingsDto.isShowBio());
-        assertThat(userSettingsEntity.isShowPosts()).isEqualTo(userSettingsDto.isShowPosts());
-        assertThat(userSettingsEntity.isShowLikes()).isEqualTo(userSettingsDto.isShowLikes());
-        assertThat(userSettingsEntity.isShowComments()).isEqualTo(userSettingsDto.isShowComments());
+        assertThat(userSettingsEntity.getShowFriends()).isEqualTo(userSettingsDto.getShowFriends());
+        assertThat(userSettingsEntity.getShowProfilePicture()).isEqualTo(userSettingsDto.getShowProfilePicture());
+        assertThat(userSettingsEntity.getShowBio()).isEqualTo(userSettingsDto.getShowBio());
+        assertThat(userSettingsEntity.getShowPosts()).isEqualTo(userSettingsDto.getShowPosts());
+        assertThat(userSettingsEntity.getShowLikes()).isEqualTo(userSettingsDto.getShowLikes());
+        assertThat(userSettingsEntity.getShowComments()).isEqualTo(userSettingsDto.getShowComments());
         assertThat(userSettingsEntity.getCreatedAt()).isEqualTo(userSettingsDto.getCreatedAt());
         assertThat(userSettingsEntity.getUpdatedAt()).isEqualTo(userSettingsDto.getUpdatedAt());
 
@@ -403,12 +403,12 @@ public class MapperUnitTest {
         //assertions on dto after reverse mapping
         assertThat(mappedBackUserSettingsDto).isNotNull();
         assertThat(mappedBackUserSettingsDto.getId()).isEqualTo(userSettingsEntity.getId());
-        assertThat(mappedBackUserSettingsDto.isShowFriends()).isEqualTo(userSettingsEntity.isShowFriends());
-        assertThat(mappedBackUserSettingsDto.isShowProfilePicture()).isEqualTo(userSettingsEntity.isShowProfilePicture());
-        assertThat(mappedBackUserSettingsDto.isShowBio()).isEqualTo(userSettingsEntity.isShowBio());
-        assertThat(mappedBackUserSettingsDto.isShowPosts()).isEqualTo(userSettingsEntity.isShowPosts());
-        assertThat(mappedBackUserSettingsDto.isShowLikes()).isEqualTo(userSettingsEntity.isShowLikes());
-        assertThat(mappedBackUserSettingsDto.isShowComments()).isEqualTo(userSettingsEntity.isShowComments());
+        assertThat(mappedBackUserSettingsDto.getShowFriends()).isEqualTo(userSettingsEntity.getShowFriends());
+        assertThat(mappedBackUserSettingsDto.getShowProfilePicture()).isEqualTo(userSettingsEntity.getShowProfilePicture());
+        assertThat(mappedBackUserSettingsDto.getShowBio()).isEqualTo(userSettingsEntity.getShowBio());
+        assertThat(mappedBackUserSettingsDto.getShowPosts()).isEqualTo(userSettingsEntity.getShowPosts());
+        assertThat(mappedBackUserSettingsDto.getShowLikes()).isEqualTo(userSettingsEntity.getShowLikes());
+        assertThat(mappedBackUserSettingsDto.getShowComments()).isEqualTo(userSettingsEntity.getShowComments());
         assertThat(mappedBackUserSettingsDto.getCreatedAt()).isEqualTo(userSettingsEntity.getCreatedAt());
         assertThat(mappedBackUserSettingsDto.getUpdatedAt()).isEqualTo(userSettingsEntity.getUpdatedAt());
 
@@ -429,7 +429,7 @@ public class MapperUnitTest {
         assertThat(postImageEntity).isNotNull();
         assertThat(postImageEntity.getId()).isEqualTo(postImageDto.getId());
         assertThat(postImageEntity.getImagePath()).isEqualTo(postImageDto.getImagePath());
-        assertThat(postImageEntity.isPrimary()).isEqualTo(postImageDto.isPrimary());
+        assertThat(postImageEntity.getIsPrimary()).isEqualTo(postImageDto.getIsPrimary());
         assertThat(postImageEntity.getCreatedAt()).isEqualTo(postImageDto.getCreatedAt());
 
         //check post mapping
@@ -444,7 +444,7 @@ public class MapperUnitTest {
         assertThat(mappedBackPostImageDto).isNotNull();
         assertThat(mappedBackPostImageDto.getId()).isEqualTo(postImageEntity.getId());
         assertThat(mappedBackPostImageDto.getImagePath()).isEqualTo(postImageEntity.getImagePath());
-        assertThat(mappedBackPostImageDto.isPrimary()).isEqualTo(postImageEntity.isPrimary());
+        assertThat(mappedBackPostImageDto.getIsPrimary()).isEqualTo(postImageEntity.getIsPrimary());
         assertThat(mappedBackPostImageDto.getCreatedAt()).isEqualTo(postImageEntity.getCreatedAt());
 
         //re-check post mapping after reverse mapping
@@ -463,8 +463,8 @@ public class MapperUnitTest {
         //assertions on entity after mapping
         assertThat(userStatusEntity).isNotNull();
         assertThat(userStatusEntity.getId()).isEqualTo(userStatusDto.getId());
-        assertThat(userStatusEntity.isSuspended()).isEqualTo(userStatusDto.isSuspended());
-        assertThat(userStatusEntity.isVerified()).isEqualTo(userStatusDto.isVerified());
+        assertThat(userStatusEntity.getIsSuspended()).isEqualTo(userStatusDto.getIsSuspended());
+        assertThat(userStatusEntity.getIsVerified()).isEqualTo(userStatusDto.getIsVerified());
         assertThat(userStatusEntity.getSuspendedUntil()).isEqualTo(userStatusDto.getSuspendedUntil());
 
         //check user mapping
@@ -478,8 +478,8 @@ public class MapperUnitTest {
         //assertions on dto after reverse mapping
         assertThat(mappedBackUserStatusDto).isNotNull();
         assertThat(mappedBackUserStatusDto.getId()).isEqualTo(userStatusEntity.getId());
-        assertThat(mappedBackUserStatusDto.isSuspended()).isEqualTo(userStatusEntity.isSuspended());
-        assertThat(mappedBackUserStatusDto.isVerified()).isEqualTo(userStatusEntity.isVerified());
+        assertThat(mappedBackUserStatusDto.getIsSuspended()).isEqualTo(userStatusEntity.getIsSuspended());
+        assertThat(mappedBackUserStatusDto.getIsVerified()).isEqualTo(userStatusEntity.getIsVerified());
         assertThat(mappedBackUserStatusDto.getSuspendedUntil()).isEqualTo(userStatusEntity.getSuspendedUntil());
 
         //re-check user mapping after reverse mapping
@@ -506,7 +506,7 @@ public class MapperUnitTest {
         assertThat(userEntity.getBio()).isEqualTo(userDto.getBio());
         assertThat(userEntity.getProfilePicturePath()).isEqualTo(userDto.getProfilePicturePath());
         assertThat(userEntity.getUserRole()).isEqualTo(userDto.getUserRole());
-        assertThat(userEntity.isActive()).isEqualTo(userDto.isActive());
+        assertThat(userEntity.getIsActive()).isEqualTo(userDto.getIsActive());
         assertThat(userEntity.getCreatedAt()).isEqualTo(userDto.getCreatedAt());
         assertThat(userEntity.getLastLogin()).isEqualTo(userDto.getLastLogin());
 
@@ -524,7 +524,7 @@ public class MapperUnitTest {
         assertThat(mappedBackUserDto.getBio()).isEqualTo(userEntity.getBio());
         assertThat(mappedBackUserDto.getProfilePicturePath()).isEqualTo(userEntity.getProfilePicturePath());
         assertThat(mappedBackUserDto.getUserRole()).isEqualTo(userEntity.getUserRole());
-        assertThat(mappedBackUserDto.isActive()).isEqualTo(userEntity.isActive());
+        assertThat(mappedBackUserDto.getIsActive()).isEqualTo(userEntity.getIsActive());
         assertThat(mappedBackUserDto.getCreatedAt()).isEqualTo(userEntity.getCreatedAt());
         assertThat(mappedBackUserDto.getLastLogin()).isEqualTo(userEntity.getLastLogin());
     }
