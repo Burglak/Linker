@@ -1,6 +1,7 @@
 package com.burglak.linker.service;
 
 import com.burglak.linker.mapper.impl.UserMapper;
+import com.burglak.linker.model.entity.User;
 import com.burglak.linker.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
 }
