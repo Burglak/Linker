@@ -1,4 +1,4 @@
-package com.burglak.linker.mapperTest;
+package com.burglak.linker.unitTest;
 
 import com.burglak.linker.TestDataUtil;
 import com.burglak.linker.mapper.*;

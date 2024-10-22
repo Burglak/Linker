@@ -30,18 +30,20 @@ public class UserService {
     }
 
     public UserDto findUserById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id)); //throw UserNotFoundException if user does not exist
         return userMapper.mapTo(user);
     }
 
     public List<UserDto> findAllUsers() {
-        List<User> users = StreamSupport.stream(userRepository.findAll().spliterator(), false).toList();
-        List<UserDto> usersDto = users.stream().map(user -> userMapper.mapTo(user)).toList();
+        List<User> users = StreamSupport.stream(userRepository.findAll().spliterator(), false).toList(); //Iterable to List
+        List<UserDto> usersDto = users.stream().map(user -> userMapper.mapTo(user)).toList(); //map from User to UserDto
         return usersDto;
     }
 
-    public UserDto updateUser(UserDto userDto) {
-        User existingUser = userRepository.findById(userDto.getId()).orElseThrow(() -> new UserNotFoundException(userDto.getId()));
+    public UserDto updateUser(Long id, UserDto userDto) {
+        userDto.setId(id);
+
+        User existingUser = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(userDto.getId())); //throw UserNotFoundException if user does not exist
         existingUser = userMapper.mapFrom(userDto);
         User savedUser = userRepository.save(existingUser);
         return userMapper.mapTo(savedUser);
@@ -51,6 +53,7 @@ public class UserService {
         userDto.setId(id);
 
         return userRepository.findById(id).map(existingUser -> {
+            //check if fields in userDto are not null, and if so, update the corresponding fields in the existing user
             Optional.ofNullable(userDto.getFirstName()).ifPresent(existingUser::setFirstName);
             Optional.ofNullable(userDto.getLastName()).ifPresent(existingUser::setLastName);
             Optional.ofNullable(userDto.getEmail()).ifPresent(existingUser::setEmail);
@@ -62,10 +65,11 @@ public class UserService {
             Optional.ofNullable(userDto.getLastLogin()).ifPresent(existingUser::setLastLogin);
             Optional.ofNullable(userDto.getUserRole()).ifPresent(existingUser::setUserRole);
             return userMapper.mapTo(userRepository.save(existingUser));
-        }).orElseThrow(() -> new UserNotFoundException(id));
+        }).orElseThrow(() -> new UserNotFoundException(id)); //throw UserNotFoundException if user does not exist
     }
 
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
 }
