@@ -21,7 +21,7 @@ public class MessageDto {
 
     private String content;
 
-    private boolean isRead;
+    private Boolean isRead;
 
     private Timestamp createdAt;
 

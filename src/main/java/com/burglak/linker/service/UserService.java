@@ -58,6 +58,9 @@ public class UserService {
             Optional.ofNullable(userDto.getPassword()).ifPresent(existingUser::setPassword);
             Optional.ofNullable(userDto.getBio()).ifPresent(existingUser::setBio);
             Optional.ofNullable(userDto.getProfilePicturePath()).ifPresent(existingUser::setProfilePicturePath);
+            Optional.ofNullable(userDto.isActive()).ifPresent(existingUser::setActive);
+            Optional.ofNullable(userDto.getLastLogin()).ifPresent(existingUser::setLastLogin);
+            Optional.ofNullable(userDto.getUserRole()).ifPresent(existingUser::setUserRole);
             return userMapper.mapTo(userRepository.save(existingUser));
         }).orElseThrow(() -> new UserNotFoundException(id));
     }

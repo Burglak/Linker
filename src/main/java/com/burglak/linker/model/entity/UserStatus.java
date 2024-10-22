@@ -25,12 +25,12 @@ public class UserStatus {
     private User user;
 
     @Column(name = "is_suspended", nullable = false, columnDefinition = "boolean default false") //make this field false by default
-    private boolean isSuspended;
+    private Boolean isSuspended;
 
     @Column(name = "suspended_until")
     private Timestamp suspendedUntil;
 
     @Column(name = "is_verified", nullable = false)
-    private boolean isVerified;
+    private Boolean isVerified;
 
 }

@@ -46,7 +46,7 @@ public class User {
     private UserRole userRole;
 
     @Column(name = "is_active")
-    private boolean isActive;
+    private Boolean isActive;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

@@ -33,7 +33,7 @@ public class UserDto
 
     private UserRole userRole;
 
-    private boolean isActive;
+    private Boolean isActive;
 
     private Timestamp createdAt;
 

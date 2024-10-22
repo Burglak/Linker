@@ -33,7 +33,7 @@ public class Message {
     private String content;
 
     @Column(name = "is_read", nullable = false)
-    private boolean isRead;
+    private Boolean isRead;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

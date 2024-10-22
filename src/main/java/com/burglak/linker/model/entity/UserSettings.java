@@ -27,22 +27,22 @@ public class UserSettings {
     private User user;
 
     @Column(name = "show_friends", nullable = false, columnDefinition = "boolean default true")
-    private boolean showFriends;
+    private Boolean showFriends;
 
     @Column(name = "show_profile_picture", nullable = false, columnDefinition = "boolean default true")
-    private boolean showProfilePicture;
+    private Boolean showProfilePicture;
 
     @Column(name = "show_bio", nullable = false, columnDefinition = "boolean default true")
-    private boolean showBio;
+    private Boolean showBio;
 
     @Column(name = "show_posts", nullable = false, columnDefinition = "boolean default true")
-    private boolean showPosts;
+    private Boolean showPosts;
 
     @Column(name = "show_likes", nullable = false, columnDefinition = "boolean default true")
-    private boolean showLikes;
+    private Boolean showLikes;
 
     @Column(name = "show_comments", nullable = false, columnDefinition = "boolean default true")
-    private boolean showComments;
+    private Boolean showComments;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

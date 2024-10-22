@@ -19,7 +19,7 @@ public class PostImageDto {
 
     private String imagePath;
 
-    private boolean isPrimary;
+    private Boolean isPrimary;
 
     private Timestamp createdAt;
 

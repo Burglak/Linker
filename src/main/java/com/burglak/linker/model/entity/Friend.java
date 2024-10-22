@@ -30,7 +30,7 @@ public class Friend {
     private User userTwo;
 
     @Column(name = "is_accepted", nullable = false , columnDefinition = "boolean default false") //make this field false by default
-    private boolean isAccepted;
+    private Boolean isAccepted;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

@@ -19,7 +19,7 @@ public class FriendDto {
 
     private UserDto userTwo;
 
-    private boolean isAccepted;
+    private Boolean isAccepted;
 
     private Timestamp createdAt;
 

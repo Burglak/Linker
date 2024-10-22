@@ -17,17 +17,17 @@ public class UserSettingsDto {
 
     private UserDto user;
 
-    private boolean showFriends;
+    private Boolean showFriends;
 
-    private boolean showProfilePicture;
+    private Boolean showProfilePicture;
 
-    private boolean showBio;
+    private Boolean showBio;
 
-    private boolean showPosts;
+    private Boolean showPosts;
 
-    private boolean showLikes;
+    private Boolean showLikes;
 
-    private boolean showComments;
+    private Boolean showComments;
 
     private Timestamp createdAt;
 

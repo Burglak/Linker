@@ -29,7 +29,7 @@ public class PostImage {
     private String imagePath;
 
     @Column(name = "is_primary", nullable = false)
-    private boolean isPrimary;
+    private Boolean isPrimary;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

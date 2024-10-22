@@ -17,10 +17,10 @@ public class UserStatusDto {
 
     private UserDto user;
 
-    private boolean isSuspended;
+    private Boolean isSuspended;
 
     private Timestamp suspendedUntil;
 
-    private boolean isVerified;
+    private Boolean isVerified;
 
 }
