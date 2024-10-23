@@ -3,7 +3,6 @@ package com.burglak.linker.integrationTest;
 import com.burglak.linker.TestDataUtil;
 import com.burglak.linker.dto.UserDto;
 import com.burglak.linker.exception.UserNotFoundException;
-import com.burglak.linker.model.entity.User;
 import com.burglak.linker.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.sql.Timestamp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -20,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class UserServiceTest {
 
-    UserService userService;
+    private UserService userService;
 
     @Autowired
     public UserServiceTest(UserService userService) {

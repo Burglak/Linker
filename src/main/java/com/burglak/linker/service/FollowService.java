@@ -29,7 +29,7 @@ public class FollowService {
         return followMapper.mapTo(savedFollow);
     }
 
-    public FollowDto findfollowById(Long id) {
+    public FollowDto findFollowById(Long id) {
         Follow follow = followRepository.findById(id).orElseThrow(() -> new FollowNotFoundException(id));
         return followMapper.mapTo(follow);
     }
@@ -59,10 +59,10 @@ public class FollowService {
             //check if fields in followDto are not null, and if so, update the corresponding fields in the existing follow
             Optional.ofNullable(mappedFollow.getFollower()).ifPresent(existingFollow::setFollower);
             Optional.ofNullable(mappedFollow.getFollowed()).ifPresent(existingFollow::setFollowed);
-            return followMapper.mapTo(existingFollow);
+            return followMapper.mapTo(followRepository.save(existingFollow));
         }).orElseThrow(() -> new FollowNotFoundException(id)); //throw FollowNotFoundException if follow does not exist
     }
 
-    public void deleteFollower(Long id) {followRepository.deleteById(id);}
+    public void deleteFollow(Long id) {followRepository.deleteById(id);}
 
 }

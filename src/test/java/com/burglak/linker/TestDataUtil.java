@@ -21,8 +21,8 @@ public class TestDataUtil {
                 .profilePicturePath("/images/profile/john.png")
                 .userRole(UserRole.USER)
                 .isActive(true)
-                .createdAt(Timestamp.from(Instant.now()))
-                .lastLogin(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .lastLogin(new Timestamp(3))
                 .build();
     }
 
@@ -38,8 +38,8 @@ public class TestDataUtil {
                 .profilePicturePath("/images/profile/jane.png")
                 .userRole(UserRole.ADMIN)
                 .isActive(true)
-                .createdAt(Timestamp.from(Instant.now()))
-                .lastLogin(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .lastLogin(new Timestamp(3))
                 .build();
     }
 
@@ -55,8 +55,8 @@ public class TestDataUtil {
                 .profilePicturePath("/images/profile/alice.png")
                 .userRole(UserRole.USER)
                 .isActive(true)
-                .createdAt(Timestamp.from(Instant.now()))
-                .lastLogin(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .lastLogin(new Timestamp(3))
                 .build();
     }
 
@@ -65,7 +65,7 @@ public class TestDataUtil {
                 .id(1L)
                 .follower(userA())
                 .followed(userB())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -74,7 +74,7 @@ public class TestDataUtil {
                 .id(2L)
                 .follower(userB())
                 .followed(userC())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -83,7 +83,7 @@ public class TestDataUtil {
                 .id(3L)
                 .follower(userC())
                 .followed(userA())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -94,7 +94,7 @@ public class TestDataUtil {
                 .userOne(userA())
                 .userTwo(userB())
                 .isAccepted(true)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -104,7 +104,7 @@ public class TestDataUtil {
                 .userOne(userB())
                 .userTwo(userC())
                 .isAccepted(true)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -114,7 +114,7 @@ public class TestDataUtil {
                 .userOne(userC())
                 .userTwo(userA())
                 .isAccepted(false)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -125,7 +125,7 @@ public class TestDataUtil {
                 .recipient(userB())
                 .content("Hello, how are you?")
                 .isRead(false)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -136,7 +136,7 @@ public class TestDataUtil {
                 .recipient(userC())
                 .content("Are you coming to the meeting?")
                 .isRead(false)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -147,7 +147,7 @@ public class TestDataUtil {
                 .recipient(userA())
                 .content("Don't forget our dinner!")
                 .isRead(false)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -180,7 +180,7 @@ public class TestDataUtil {
                 .downvotes(5L)
                 .postVisibility(PostVisibility.PUBLIC)
                 .category(postCategoryA())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -192,7 +192,7 @@ public class TestDataUtil {
                 .downvotes(2L)
                 .postVisibility(PostVisibility.FRIENDS)
                 .category(postCategoryB())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -204,7 +204,7 @@ public class TestDataUtil {
                 .downvotes(3L)
                 .postVisibility(PostVisibility.PUBLIC)
                 .category(postCategoryC())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -245,7 +245,7 @@ public class TestDataUtil {
                 .user(userA())
                 .content("This is a sample comment.")
                 .parentComment(null)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -256,7 +256,7 @@ public class TestDataUtil {
                 .user(userB())
                 .content("Great post!")
                 .parentComment(postCommentA())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -267,7 +267,7 @@ public class TestDataUtil {
                 .user(userC())
                 .content("Thanks for sharing!")
                 .parentComment(null)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -278,7 +278,7 @@ public class TestDataUtil {
                 .post(postA())
                 .user(userB())
                 .reportType("Spam")
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -288,7 +288,7 @@ public class TestDataUtil {
                 .post(postB())
                 .user(userC())
                 .reportType("Inappropriate Content")
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -298,7 +298,7 @@ public class TestDataUtil {
                 .post(postC())
                 .user(userA())
                 .reportType("Harassment")
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -308,7 +308,7 @@ public class TestDataUtil {
                 .post(postA())
                 .user(userB())
                 .postReactionType(PostReactionType.LIKE)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -318,7 +318,7 @@ public class TestDataUtil {
                 .post(postB())
                 .user(userC())
                 .postReactionType(PostReactionType.DISLIKE)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -328,7 +328,7 @@ public class TestDataUtil {
                 .post(postC())
                 .user(userA())
                 .postReactionType(PostReactionType.LIKE)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -342,8 +342,8 @@ public class TestDataUtil {
                 .showPosts(true)
                 .showLikes(true)
                 .showComments(true)
-                .createdAt(Timestamp.from(Instant.now()))
-                .updatedAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .updatedAt(new Timestamp(2))
                 .build();
     }
 
@@ -357,8 +357,8 @@ public class TestDataUtil {
                 .showPosts(false)
                 .showLikes(true)
                 .showComments(false)
-                .createdAt(Timestamp.from(Instant.now()))
-                .updatedAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .updatedAt(new Timestamp(2))
                 .build();
     }
 
@@ -372,8 +372,8 @@ public class TestDataUtil {
                 .showPosts(true)
                 .showLikes(false)
                 .showComments(true)
-                .createdAt(Timestamp.from(Instant.now()))
-                .updatedAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
+                .updatedAt(new Timestamp(2))
                 .build();
     }
 
@@ -413,7 +413,7 @@ public class TestDataUtil {
                 .user(userA())
                 .path("/images/users/john_image1.png")
                 .userImageVisibility(UserImageVisibility.PUBLIC)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -423,7 +423,7 @@ public class TestDataUtil {
                 .user(userB())
                 .path("/images/users/jane_image1.png")
                 .userImageVisibility(UserImageVisibility.FRIENDS)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -433,7 +433,7 @@ public class TestDataUtil {
                 .user(userC())
                 .path("/images/users/alice_image1.png")
                 .userImageVisibility(UserImageVisibility.PUBLIC)
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -442,7 +442,7 @@ public class TestDataUtil {
                 .id(1L)
                 .user(userA())
                 .post(postA())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -451,7 +451,7 @@ public class TestDataUtil {
                 .id(2L)
                 .user(userB())
                 .post(postB())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
@@ -460,7 +460,7 @@ public class TestDataUtil {
                 .id(3L)
                 .user(userC())
                 .post(postC())
-                .createdAt(Timestamp.from(Instant.now()))
+                .createdAt(new Timestamp(1))
                 .build();
     }
 
