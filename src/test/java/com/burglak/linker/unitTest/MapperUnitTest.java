@@ -642,21 +642,21 @@ public class MapperUnitTest {
 
     @Test
     public void postCategoryMapperTest() {
-        // Prepare test data
+        //prepare test data
         PostCategoryDto postCategoryDto = TestDataUtil.postCategoryA();
 
-        // Map from DTO to entity
+        //map from DTO to entity
         PostCategory postCategoryEntity = postCategoryMapper.mapFrom(postCategoryDto);
 
-        // Assertions on entity after mapping
+        //assertions on entity after mapping
         assertThat(postCategoryEntity).isNotNull();
         assertThat(postCategoryEntity.getId()).isEqualTo(postCategoryDto.getId());
         assertThat(postCategoryEntity.getName()).isEqualTo(postCategoryDto.getName());
 
-        // Map back from entity to DTO
+        //map back from entity to DTO
         PostCategoryDto mappedBackPostCategoryDto = postCategoryMapper.mapTo(postCategoryEntity);
 
-        // Assertions on DTO after reverse mapping
+        //assertions on DTO after reverse mapping
         assertThat(mappedBackPostCategoryDto).isNotNull();
         assertThat(mappedBackPostCategoryDto.getId()).isEqualTo(postCategoryEntity.getId());
         assertThat(mappedBackPostCategoryDto.getName()).isEqualTo(postCategoryEntity.getName());
