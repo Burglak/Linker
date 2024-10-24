@@ -5,7 +5,5 @@ public class FriendNotFoundException extends RuntimeException {
         super(message);
     }
 
-    public FriendNotFoundException(Long id) {
-        super("Friend not found with id: " + id);
-    }
+    public FriendNotFoundException(Long id) {super("Friend not found with id: " + id);}
 }
