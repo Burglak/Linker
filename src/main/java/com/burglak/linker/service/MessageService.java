@@ -62,7 +62,7 @@ public class MessageService {
             Optional.ofNullable(mappedMessage.getContent()).ifPresent(existingMessage::setContent);
             Optional.ofNullable(mappedMessage.getIsRead()).ifPresent(existingMessage::setIsRead);
             return messageMapper.mapTo(messageRepository.save(existingMessage));
-        }).orElseThrow(() -> new UserNotFoundException(id));
+        }).orElseThrow(() -> new MessageNotFoundException(id));
     }
 
     public void deleteMessage(Long id) {
