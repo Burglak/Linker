@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequestMapping("/api/v1/follows")
 @RestController
 public class FollowController {
 
@@ -17,32 +18,32 @@ public class FollowController {
         this.followService = followService;
     }
 
-    @PostMapping(path = "/api/v1/follows")
+    @PostMapping
     public ResponseEntity<FollowDto> createFollow(@RequestBody FollowDto followDto) {
         return new ResponseEntity<>(followService.createFollow(followDto), HttpStatus.CREATED); // Status: 201
     }
 
-    @GetMapping(path = "/api/v1/follows")
+    @GetMapping
     public List<FollowDto> getFollows() {
         return followService.findAllFollows(); // Status: 200
     }
 
-    @GetMapping(path = "/api/v1/follows/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<FollowDto> getFollow(@PathVariable("id") Long id) {
         return new ResponseEntity<>(followService.findFollowById(id), HttpStatus.OK); // Status: 200 or 404 if resource does not exist
     }
 
-    @PutMapping(path = "/api/v1/follows/{id}")
+    @PutMapping(path = "/{id}")
     public FollowDto updateFollow(@PathVariable("id") Long id, @RequestBody FollowDto followDto) {
         return followService.updateFollow(id, followDto); // Status: 200 or 404 if resource does not exist
     }
 
-    @PatchMapping(path = "/api/v1/follows/{id}")
+    @PatchMapping(path = "/{id}")
     public FollowDto partialUpdateFollow(@PathVariable("id") Long id, @RequestBody FollowDto followDto) {
         return followService.partialUpdateFollow(id, followDto); // Status: 200 or 404 if resource does not exist
     }
 
-    @DeleteMapping(path = "/api/v1/follows/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<FollowDto> deleteFollow(@PathVariable("id") Long id) {
         followService.deleteFollow(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Status: 204
