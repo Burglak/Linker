@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/postReactions")
+@RequestMapping("/api/v1/post-reactions")
 public class PostReactionController {
 
     private final PostReactionService postReactionService;
