@@ -34,5 +34,6 @@ public class SecurityConfig {
                 .authenticationProvider(authenticationProvider)
                 .addFilter(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
+
     }
 }
