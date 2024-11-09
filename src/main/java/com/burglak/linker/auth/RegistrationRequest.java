@@ -1,6 +1,7 @@
 package com.burglak.linker.auth;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -16,10 +17,12 @@ public class RegistrationRequest {
 
     @NotEmpty(message = "Firstname is mandatory")
     @NotBlank(message = "Firstname is mandatory")
+    @JsonProperty("first_name")
     private String firstName;
 
     @NotEmpty(message = "Lastname is mandatory")
     @NotBlank(message = "Lastname is mandatory")
+    @JsonProperty("last_name")
     private String lastName;
 
     @NotEmpty(message = "Email is mandatory")
