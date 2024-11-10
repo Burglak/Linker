@@ -56,7 +56,7 @@ public class AuthenticationService {
                 EmailTemplateName.ACTIVATE_ACCOUNT,
                 activationUrl,
                 newToken,
-                "Account activation"
+                "Activate your Linker account"
 
         );
 
