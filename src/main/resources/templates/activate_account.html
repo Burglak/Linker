@@ -15,7 +15,7 @@
             max-width: 600px;
             margin: 10px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -32,7 +32,7 @@
         .activation-link a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ff6600;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -43,7 +43,7 @@
 <div class="container">
     <h1>Account Activation</h1>
     <p class="greeting" th:text="'Hello ' + ${username} + ','"></p>
-    <p>Thank you for signing up! Please use the following activation code to activate your account:</p>
+    <p>Thank you for your registration on linker.com! To complete the registration please use the activation code below to activate your account:</p>
     <div class="activation-code"><span th:text="${activation_code}"></span></div>
     <div class="activation-link">
         <a th:href="${confirmation_url}" target="_blank">Activate your account</a>
