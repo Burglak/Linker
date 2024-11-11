@@ -32,7 +32,7 @@ public class JwtService {
     }
 
     //build the JWT token with given claims, user details, and expiration
-    private String generateToken(Map<String, Object> claims, UserDetails userDetails) {
+    public String generateToken(Map<String, Object> claims, UserDetails userDetails) {
         return buildToken(claims, userDetails, jwtExpiration);
     }
 
