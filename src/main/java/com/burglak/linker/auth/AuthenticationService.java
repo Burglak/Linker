@@ -1,6 +1,7 @@
 package com.burglak.linker.auth;
 
 import com.burglak.linker.email.EmailTemplateName;
+import com.burglak.linker.exception.TokenNotFoundException;
 import com.burglak.linker.exception.UserNotFoundException;
 import com.burglak.linker.model.entity.Token;
 import com.burglak.linker.model.entity.User;
@@ -17,7 +18,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
 import java.sql.Timestamp;

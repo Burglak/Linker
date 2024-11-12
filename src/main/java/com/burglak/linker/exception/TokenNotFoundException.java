@@ -1,4 +1,4 @@
-package com.burglak.linker.auth;
+package com.burglak.linker.exception;
 
 public class TokenNotFoundException extends RuntimeException {
     public TokenNotFoundException(String token) {
