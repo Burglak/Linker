@@ -1,5 +1,6 @@
 package com.burglak.linker.model.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,34 +15,23 @@ import java.sql.Timestamp;
 @AllArgsConstructor //create constructor with all arguments constructor
 @NoArgsConstructor //create no arguments constructor
 @Entity //entity representing a table stored in a database
-@Table(name = "theme") //name of the table
-public class Theme {
+@Table(name = "user_theme") //name of the table
+public class UserTheme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int price;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private String name;
-
-    @Column(name = "primary_color", nullable = false)
-    private String primaryColor;
-
-    @Column(name = "secondary_color", nullable = false)
-    private String secondaryColor;
-
-    @Column(name = "background_color", nullable = false)
-    private String backgroundColor;
-
-    @Column(name = "support_color", nullable = false)
-    private String supportColor;
-
-    @Column(name = "text_color", nullable = false)
-    private String textColor;
+    @ManyToOne
+    @JoinColumn(name = "theme_id")
+    private Theme theme;
 
     @CreationTimestamp
-    @Column(name = "created_at", nullable = false)
-    private Timestamp createdAt;
+    @Column(name = "purchasedAt", nullable = false)
+    private Timestamp purchasedAt;
 
 }
