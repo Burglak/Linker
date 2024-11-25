@@ -1,5 +1,6 @@
 package com.burglak.linker.model.entity;
 
+import com.burglak.linker.model.enums.ThemeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,6 +44,14 @@ public class UserSettings {
 
     @Column(name = "show_comments", nullable = false, columnDefinition = "boolean default true")
     private Boolean showComments;
+
+    @ManyToOne
+    @JoinColumn(name = "app_theme_id")
+    private ThemeType appTheme;
+
+    @ManyToOne
+    @JoinColumn(name = "profile_theme_id")
+    private ThemeType profileTheme;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

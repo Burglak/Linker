@@ -1,5 +1,6 @@
 package com.burglak.linker.model.entity;
 
+import com.burglak.linker.model.enums.ThemeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,6 +40,10 @@ public class Theme {
 
     @Column(name = "text_color", nullable = false)
     private String textColor;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "theme_type", nullable = false)
+    private ThemeType type;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
