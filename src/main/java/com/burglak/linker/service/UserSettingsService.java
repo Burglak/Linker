@@ -47,6 +47,7 @@ public class UserSettingsService {
         return userSettingsMapper.mapTo(savedUserSettings);
     }
 
+    //todo: update partial update
     public UserSettingsDto partialUpdateUserSettings(Long id, UserSettingsDto userSettingsDto) {
         userSettingsDto.setId(id);
 

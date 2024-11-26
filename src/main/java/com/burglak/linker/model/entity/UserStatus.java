@@ -20,7 +20,7 @@ public class UserStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generated id
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
