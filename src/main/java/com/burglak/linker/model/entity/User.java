@@ -40,6 +40,9 @@ public class User implements UserDetails, Principal {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
+    @Column(name = "username", unique = true)
+    private String username;
+
     @Column(unique = true)
     private String phone;
 
