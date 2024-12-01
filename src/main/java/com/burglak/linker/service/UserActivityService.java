@@ -1,6 +1,7 @@
 package com.burglak.linker.service;
 
 import com.burglak.linker.dto.UserActivityDto;
+import com.burglak.linker.dto.UserDto;
 import com.burglak.linker.enums.UserActivityType;
 import com.burglak.linker.exception.UserActivityNotFoundException;
 import com.burglak.linker.mapper.impl.UserActivityMapper;
@@ -9,6 +10,7 @@ import com.burglak.linker.repository.UserActivityRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.StreamSupport;
 
@@ -56,13 +58,30 @@ public class UserActivityService {
     }
 
     //increase messagesSent or postsCreated depending on activity type
-    public UserActivityDto updateUserActivity(Long id, UserActivityType activityType) {
-        UserActivity existingUserActivity = userActivityRepository.findById(id)
-                .orElseThrow(() -> new UserActivityNotFoundException(id));
-        if(activityType == UserActivityType.MESSAGE)
-            existingUserActivity.setMessagesSent(existingUserActivity.getMessagesSent() + 1);
-        if(activityType == UserActivityType.POST)
-            existingUserActivity.setPostsCreated(existingUserActivity.getPostsCreated() + 1);
+    public UserActivityDto updateUserActivity(Long userId, UserDto userDto, UserActivityType activityType) {
+        UserActivity existingUserActivity = null;
+        List<UserActivity> userActivities = userActivityRepository.findAllByUser(userId);
+        for(UserActivity activity : userActivities) {
+            if(activity.getActivityDate().toLocalDateTime().toLocalDate().equals(LocalDate.now())){
+                existingUserActivity = activity;
+                break;
+            }
+        }
+        if(existingUserActivity == null) {
+            UserActivityDto createdActivity = createUserActivity(UserActivityDto.builder().user(userDto).build());
+            existingUserActivity = userActivityMapper.mapFrom(createdActivity);
+        }
+
+        switch (activityType) {
+            case MESSAGE:
+                existingUserActivity.setMessagesSent(existingUserActivity.getMessagesSent() + 1);
+                break;
+            case POST:
+                existingUserActivity.setPostsCreated(existingUserActivity.getPostsCreated() + 1);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported activity type");
+        }
         existingUserActivity.setTotalActivity(
                 calculateTotalActivity(
                         existingUserActivity.getMessagesSent(),
