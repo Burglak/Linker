@@ -1,6 +1,6 @@
-package com.burglak.linker.model.entity;
+package com.burglak.linker.model;
 
-import com.burglak.linker.model.enums.UserRole;
+import com.burglak.linker.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -50,6 +50,9 @@ public class User implements UserDetails, Principal {
     private String password;
 
     private String bio;
+
+    @Column(name = "balance", nullable = false, columnDefinition = "int default 0")
+    private int balance;
 
     @Column(name = "profile_picture_path", nullable = true)
     private String profilePicturePath;

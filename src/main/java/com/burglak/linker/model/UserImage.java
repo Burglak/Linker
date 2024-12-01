@@ -1,5 +1,6 @@
-package com.burglak.linker.model.entity;
+package com.burglak.linker.model;
 
+import com.burglak.linker.enums.UserImageVisibility;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,22 +15,26 @@ import java.sql.Timestamp;
 @AllArgsConstructor //create constructor with all arguments constructor
 @NoArgsConstructor //create no arguments constructor
 @Entity //entity representing a table stored in a database
-@Table(name = "follow") //name of the table
-public class Follow {
+@Table(name = "user_image") //name of the table
+public class UserImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generated id
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "follower_id", nullable = false)
-    private User follower;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "followed_id", nullable = false)
-    private User followed;
+    @Column(name = "path", nullable = false)
+    private String path;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_image_visibility", nullable = false)
+    private UserImageVisibility userImageVisibility;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;
+
 }

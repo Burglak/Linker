@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.PostReactionDto;
 import com.burglak.linker.exception.PostReactionNotFoundException;
 import com.burglak.linker.mapper.impl.PostReactionMapper;
-import com.burglak.linker.model.entity.PostReaction;
+import com.burglak.linker.model.PostReaction;
 import com.burglak.linker.repository.PostReactionRepository;
 import org.springframework.stereotype.Service;
 

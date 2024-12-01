@@ -2,7 +2,7 @@ package com.burglak.linker.mapper.impl;
 
 import com.burglak.linker.dto.FollowDto;
 import com.burglak.linker.mapper.Mapper;
-import com.burglak.linker.model.entity.Follow;
+import com.burglak.linker.model.Follow;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

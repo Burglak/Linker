@@ -1,6 +1,6 @@
 package com.burglak.linker.repository;
 
-import com.burglak.linker.model.entity.PostCategory;
+import com.burglak.linker.model.PostCategory;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

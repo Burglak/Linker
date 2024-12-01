@@ -1,6 +1,6 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.model.enums.PostReactionType;
+import com.burglak.linker.enums.PostReactionType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

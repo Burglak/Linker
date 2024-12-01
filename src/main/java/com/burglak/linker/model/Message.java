@@ -1,4 +1,4 @@
-package com.burglak.linker.model.entity;
+package com.burglak.linker.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,25 +14,28 @@ import java.sql.Timestamp;
 @AllArgsConstructor //create constructor with all arguments constructor
 @NoArgsConstructor //create no arguments constructor
 @Entity //entity representing a table stored in a database
-@Table(name = "post_image") //name of the table
-public class PostImage {
+@Table(name = "message") //name of the table
+public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generated id
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "post_id", nullable = false)
-    private Post post;
+    @ManyToOne
+    @JoinColumn(name = "sender_id", nullable = false)
+    private User sender;
 
-    @Column(name = "image_path", nullable = false)
-    private String imagePath;
+    @ManyToOne
+    @JoinColumn(name = "recipient_id", nullable = false)
+    private User recipient;
 
-    @Column(name = "is_primary", nullable = false)
-    private Boolean isPrimary;
+    @Column(name = "content", nullable = false)
+    private String content;
+
+    @Column(name = "is_read", nullable = false)
+    private Boolean isRead;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;
-
 }

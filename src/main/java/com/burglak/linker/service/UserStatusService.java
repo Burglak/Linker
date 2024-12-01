@@ -4,7 +4,7 @@ import com.burglak.linker.dto.UserStatusDto;
 import com.burglak.linker.exception.UserSettingsNotFoundException;
 import com.burglak.linker.exception.UserStatusNotFoundException;
 import com.burglak.linker.mapper.impl.UserStatusMapper;
-import com.burglak.linker.model.entity.UserStatus;
+import com.burglak.linker.model.UserStatus;
 import com.burglak.linker.repository.UserStatusRepository;
 import org.springframework.stereotype.Service;
 

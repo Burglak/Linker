@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.UserDto;
 import com.burglak.linker.exception.UserNotFoundException;
 import com.burglak.linker.mapper.impl.UserMapper;
-import com.burglak.linker.model.entity.User;
+import com.burglak.linker.model.User;
 import com.burglak.linker.repository.UserRepository;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.burglak.linker.mapper.impl;
 
 import com.burglak.linker.dto.UserThemeDto;
 import com.burglak.linker.mapper.Mapper;
-import com.burglak.linker.model.entity.UserTheme;
+import com.burglak.linker.model.UserTheme;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

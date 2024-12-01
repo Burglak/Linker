@@ -1,6 +1,6 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.model.enums.ThemeType;
+import com.burglak.linker.enums.ThemeType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

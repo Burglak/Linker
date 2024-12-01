@@ -1,6 +1,6 @@
-package com.burglak.linker.model.entity;
+package com.burglak.linker.model;
 
-import com.burglak.linker.model.enums.ThemeType;
+import com.burglak.linker.enums.ThemeType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

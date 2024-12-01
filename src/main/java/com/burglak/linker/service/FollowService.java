@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.FollowDto;
 import com.burglak.linker.exception.FollowNotFoundException;
 import com.burglak.linker.mapper.impl.FollowMapper;
-import com.burglak.linker.model.entity.Follow;
+import com.burglak.linker.model.Follow;
 import com.burglak.linker.repository.FollowRepository;
 import org.springframework.stereotype.Service;
 

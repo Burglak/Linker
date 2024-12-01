@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.PostCategoryDto;
 import com.burglak.linker.exception.PostCategoryNotFoundException;
 import com.burglak.linker.mapper.impl.PostCategoryMapper;
-import com.burglak.linker.model.entity.PostCategory;
+import com.burglak.linker.model.PostCategory;
 import com.burglak.linker.repository.PostCategoryRepository;
 import org.springframework.stereotype.Service;
 

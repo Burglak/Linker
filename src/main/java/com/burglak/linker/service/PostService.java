@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.PostDto;
 import com.burglak.linker.exception.PostNotFoundException;
 import com.burglak.linker.mapper.impl.PostMapper;
-import com.burglak.linker.model.entity.Post;
+import com.burglak.linker.model.Post;
 import com.burglak.linker.repository.PostRepository;
 import org.springframework.stereotype.Service;
 

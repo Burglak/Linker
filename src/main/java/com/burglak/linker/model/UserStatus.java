@@ -1,4 +1,4 @@
-package com.burglak.linker.model.entity;
+package com.burglak.linker.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

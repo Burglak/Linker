@@ -1,7 +1,10 @@
 package com.burglak.linker;
 
 import com.burglak.linker.dto.*;
-import com.burglak.linker.model.enums.*;
+import com.burglak.linker.enums.PostReactionType;
+import com.burglak.linker.enums.PostVisibility;
+import com.burglak.linker.enums.UserImageVisibility;
+import com.burglak.linker.enums.UserRole;
 import lombok.experimental.UtilityClass;
 import java.sql.Timestamp;
 import java.time.Instant;

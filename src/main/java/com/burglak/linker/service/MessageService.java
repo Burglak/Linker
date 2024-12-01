@@ -2,9 +2,8 @@ package com.burglak.linker.service;
 
 import com.burglak.linker.dto.MessageDto;
 import com.burglak.linker.exception.MessageNotFoundException;
-import com.burglak.linker.exception.UserNotFoundException;
 import com.burglak.linker.mapper.impl.MessageMapper;
-import com.burglak.linker.model.entity.Message;
+import com.burglak.linker.model.Message;
 import com.burglak.linker.repository.MessageRepository;
 import org.springframework.stereotype.Service;
 

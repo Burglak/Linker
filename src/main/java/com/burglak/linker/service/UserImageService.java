@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.UserImageDto;
 import com.burglak.linker.exception.UserImageNotFoundException;
 import com.burglak.linker.mapper.impl.UserImageMapper;
-import com.burglak.linker.model.entity.UserImage;
+import com.burglak.linker.model.UserImage;
 import com.burglak.linker.repository.UserImageRepository;
 import org.springframework.stereotype.Service;
 

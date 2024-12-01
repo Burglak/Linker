@@ -1,6 +1,6 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.model.enums.UserRole;
+import com.burglak.linker.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,6 +30,8 @@ public class UserDto
     private String password;
 
     private String bio;
+
+    private int balance;
 
     private String profilePicturePath;
 

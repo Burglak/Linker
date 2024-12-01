@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.UserSettingsDto;
 import com.burglak.linker.exception.UserSettingsNotFoundException;
 import com.burglak.linker.mapper.impl.UserSettingsMapper;
-import com.burglak.linker.model.entity.UserSettings;
+import com.burglak.linker.model.UserSettings;
 import com.burglak.linker.repository.UserSettingsRepository;
 import org.springframework.stereotype.Service;
 

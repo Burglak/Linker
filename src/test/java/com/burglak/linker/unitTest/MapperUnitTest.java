@@ -2,9 +2,9 @@ package com.burglak.linker.unitTest;
 
 import com.burglak.linker.TestDataUtil;
 import com.burglak.linker.mapper.*;
-import com.burglak.linker.model.entity.*;
 import com.burglak.linker.dto.*;
 
+import com.burglak.linker.model.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

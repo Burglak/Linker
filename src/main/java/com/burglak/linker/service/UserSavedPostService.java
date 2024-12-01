@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.UserSavedPostDto;
 import com.burglak.linker.exception.UserSavedPostNotFoundException;
 import com.burglak.linker.mapper.impl.UserSavedPostMapper;
-import com.burglak.linker.model.entity.UserSavedPost;
+import com.burglak.linker.model.UserSavedPost;
 import com.burglak.linker.repository.UserSavedPostRepository;
 import org.springframework.stereotype.Service;
 

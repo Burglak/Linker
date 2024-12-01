@@ -1,6 +1,5 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.enums.UserImageVisibility;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,16 +11,18 @@ import java.sql.Timestamp;
 @Builder //add builder for creating objects
 @AllArgsConstructor //create constructor with all arguments constructor
 @NoArgsConstructor //create no arguments constructor
-public class UserImageDto {
+public class UserActivityDto {
 
     private Long id;
 
     private UserDto user;
 
-    private String path;
+    private Timestamp activityDate;
 
-    private UserImageVisibility userImageVisibility;
+    private int messageSent;
 
-    private Timestamp createdAt;
+    private int postsCreated;
+
+    private int totalActivity;
 
 }

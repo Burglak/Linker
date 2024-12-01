@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.FriendDto;
 import com.burglak.linker.exception.FriendNotFoundException;
 import com.burglak.linker.mapper.impl.FriendMapper;
-import com.burglak.linker.model.entity.Friend;
+import com.burglak.linker.model.Friend;
 import com.burglak.linker.repository.FriendRepository;
 import org.springframework.stereotype.Service;
 

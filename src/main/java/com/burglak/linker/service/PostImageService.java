@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.PostImageDto;
 import com.burglak.linker.exception.PostImageNotFoundException;
 import com.burglak.linker.mapper.impl.PostImageMapper;
-import com.burglak.linker.model.entity.PostImage;
+import com.burglak.linker.model.PostImage;
 import com.burglak.linker.repository.PostImageRepository;
 import org.springframework.stereotype.Service;
 

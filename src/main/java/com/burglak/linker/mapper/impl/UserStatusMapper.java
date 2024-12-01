@@ -2,7 +2,7 @@ package com.burglak.linker.mapper.impl;
 
 import com.burglak.linker.dto.UserStatusDto;
 import com.burglak.linker.mapper.Mapper;
-import com.burglak.linker.model.entity.UserStatus;
+import com.burglak.linker.model.UserStatus;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

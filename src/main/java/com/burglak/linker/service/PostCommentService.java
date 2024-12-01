@@ -3,7 +3,7 @@ package com.burglak.linker.service;
 import com.burglak.linker.dto.PostCommentDto;
 import com.burglak.linker.exception.PostCommentNotFoundException;
 import com.burglak.linker.mapper.impl.PostCommentMapper;
-import com.burglak.linker.model.entity.PostComment;
+import com.burglak.linker.model.PostComment;
 import com.burglak.linker.repository.PostCommentRepository;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@ package com.burglak.linker.mapper.impl;
 
 import com.burglak.linker.dto.UserImageDto;
 import com.burglak.linker.mapper.Mapper;
-import com.burglak.linker.model.entity.UserImage;
+import com.burglak.linker.model.UserImage;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

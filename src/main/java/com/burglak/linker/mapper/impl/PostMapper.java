@@ -2,7 +2,7 @@ package com.burglak.linker.mapper.impl;
 
 import com.burglak.linker.dto.PostDto;
 import com.burglak.linker.mapper.Mapper;
-import com.burglak.linker.model.entity.Post;
+import com.burglak.linker.model.Post;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

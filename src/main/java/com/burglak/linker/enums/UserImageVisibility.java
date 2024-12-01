@@ -1,4 +1,4 @@
-package com.burglak.linker.model.enums;
+package com.burglak.linker.enums;
 
 public enum UserImageVisibility {
     PUBLIC,

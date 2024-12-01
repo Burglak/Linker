@@ -1,6 +1,6 @@
 package com.burglak.linker.dto;
 
-import com.burglak.linker.model.enums.PostVisibility;
+import com.burglak.linker.enums.PostVisibility;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
