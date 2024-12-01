@@ -19,7 +19,7 @@ public class UserActivityDto {
 
     private Timestamp activityDate;
 
-    private int messageSent;
+    private int messagesSent;
 
     private int postsCreated;
 

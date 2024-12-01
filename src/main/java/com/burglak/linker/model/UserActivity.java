@@ -29,7 +29,7 @@ public class UserActivity {
     private Timestamp activityDate;
 
     @Column(name = "messages_sent", nullable = false, columnDefinition = "int default 0")
-    private int messageSent;
+    private int messagesSent;
 
     @Column(name = "posts_created", nullable = false, columnDefinition = "int defalut 0")
     private int postsCreated;
