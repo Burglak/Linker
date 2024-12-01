@@ -1,10 +1,14 @@
 package com.burglak.linker.service;
 
 import com.burglak.linker.dto.MessageDto;
+import com.burglak.linker.enums.UserActivityType;
 import com.burglak.linker.exception.MessageNotFoundException;
+import com.burglak.linker.exception.UserNotFoundException;
 import com.burglak.linker.mapper.impl.MessageMapper;
 import com.burglak.linker.model.Message;
+import com.burglak.linker.model.User;
 import com.burglak.linker.repository.MessageRepository;
+import com.burglak.linker.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,14 +22,21 @@ public class MessageService {
 
     private MessageMapper messageMapper;
 
-    public MessageService(MessageRepository messageRepository, MessageMapper messageMapper) {
+    private UserActivityService userActivityService;
+
+    private UserRepository userRepository;
+
+    public MessageService(MessageRepository messageRepository, MessageMapper messageMapper, UserActivityService userActivityService, UserRepository userRepository) {
         this.messageRepository = messageRepository;
         this.messageMapper = messageMapper;
+        this.userActivityService = userActivityService;
+        this.userRepository = userRepository;
     }
 
     public MessageDto createMessage(MessageDto messageDto) {
         Message message = messageMapper.mapFrom(messageDto);
         Message createdMessage = messageRepository.save(message);
+        userActivityService.updateUserActivity(messageDto.getSender(), UserActivityType.MESSAGE);
         return messageMapper.mapTo(createdMessage);
     }
 

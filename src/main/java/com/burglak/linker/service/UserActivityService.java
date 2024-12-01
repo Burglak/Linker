@@ -58,9 +58,9 @@ public class UserActivityService {
     }
 
     //increase messagesSent or postsCreated depending on activity type
-    public UserActivityDto updateUserActivity(Long userId, UserDto userDto, UserActivityType activityType) {
+    public UserActivityDto updateUserActivity(UserDto userDto, UserActivityType activityType) {
         UserActivity existingUserActivity = null;
-        List<UserActivity> userActivities = userActivityRepository.findAllByUser(userId);
+        List<UserActivity> userActivities = userActivityRepository.findAllByUser(userDto.getId());
         for(UserActivity activity : userActivities) {
             if(activity.getActivityDate().toLocalDateTime().toLocalDate().equals(LocalDate.now())){
                 existingUserActivity = activity;

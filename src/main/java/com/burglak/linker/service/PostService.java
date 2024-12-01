@@ -1,10 +1,15 @@
 package com.burglak.linker.service;
 
 import com.burglak.linker.dto.PostDto;
+import com.burglak.linker.dto.UserDto;
+import com.burglak.linker.enums.UserActivityType;
 import com.burglak.linker.exception.PostNotFoundException;
+import com.burglak.linker.exception.UserNotFoundException;
 import com.burglak.linker.mapper.impl.PostMapper;
 import com.burglak.linker.model.Post;
+import com.burglak.linker.model.User;
 import com.burglak.linker.repository.PostRepository;
+import com.burglak.linker.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,13 +23,23 @@ public class PostService {
 
     private PostMapper postMapper;
 
-    public PostService(PostRepository postRepository, PostMapper postMapper) {
+    private UserActivityService userActivityService;
+
+    private UserRepository userRepository;
+
+    public PostService(PostRepository postRepository, PostMapper postMapper, UserActivityService userActivityService, UserRepository userRepository) {
         this.postRepository = postRepository;
         this.postMapper = postMapper;
+        this.userActivityService = userActivityService;
+        this.userRepository = userRepository;
     }
 
     public PostDto createPost(PostDto postDto) {
+        User user = userRepository.findById(postDto.getUser().getId())
+                .orElseThrow(() -> new UserNotFoundException(postDto.getUser().getId()));
         Post post = postMapper.mapFrom(postDto);
+        post.setUser(user);
+        userActivityService.updateUserActivity(postDto.getUser(), UserActivityType.POST); //update user's activity
         Post createdPost = postRepository.save(post);
         return postMapper.mapTo(createdPost);
     }
