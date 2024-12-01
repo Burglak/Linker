@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserThemeRepository extends CrudRepository<Long, UserTheme> {
+public interface UserThemeRepository extends CrudRepository<UserTheme, Long> {
 }

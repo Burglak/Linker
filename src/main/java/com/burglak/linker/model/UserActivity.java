@@ -21,7 +21,8 @@ public class UserActivity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @CreationTimestamp
@@ -31,7 +32,7 @@ public class UserActivity {
     @Column(name = "messages_sent", nullable = false, columnDefinition = "int default 0")
     private int messagesSent;
 
-    @Column(name = "posts_created", nullable = false, columnDefinition = "int defalut 0")
+    @Column(name = "posts_created", nullable = false, columnDefinition = "int default 0")
     private int postsCreated;
 
     @Column(name = "total_activity", nullable = false, columnDefinition = "int default 0")

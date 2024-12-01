@@ -47,11 +47,11 @@ public class UserSettings {
 
     @ManyToOne
     @JoinColumn(name = "app_theme_id")
-    private ThemeType appTheme;
+    private Theme appTheme;
 
     @ManyToOne
     @JoinColumn(name = "profile_theme_id")
-    private ThemeType profileTheme;
+    private Theme profileTheme;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false)

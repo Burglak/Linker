@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface UserActivityRepository extends CrudRepository<UserActivity, Long> {
-    List<UserActivity> findAllByUser(Long userId);
+    List<UserActivity> findAllByUser_Id(Long userId);
 }

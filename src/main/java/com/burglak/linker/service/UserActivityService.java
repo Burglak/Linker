@@ -51,7 +51,7 @@ public class UserActivityService {
     }
 
     public List<UserActivityDto> findAllUserActivitiesByUserId(Long userId) {
-        List<UserActivity> activities = userActivityRepository.findAllByUser(userId);
+        List<UserActivity> activities = userActivityRepository.findAllByUser_Id(userId);
         return activities.stream()
                 .map(userActivityMapper::mapTo)
                 .toList();
@@ -60,7 +60,7 @@ public class UserActivityService {
     //increase messagesSent or postsCreated depending on activity type
     public UserActivityDto updateUserActivity(UserDto userDto, UserActivityType activityType) {
         UserActivity existingUserActivity = null;
-        List<UserActivity> userActivities = userActivityRepository.findAllByUser(userDto.getId());
+        List<UserActivity> userActivities = userActivityRepository.findAllByUser_Id(userDto.getId());
         for(UserActivity activity : userActivities) {
             if(activity.getActivityDate().toLocalDateTime().toLocalDate().equals(LocalDate.now())){
                 existingUserActivity = activity;

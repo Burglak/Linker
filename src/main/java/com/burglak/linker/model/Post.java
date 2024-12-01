@@ -35,7 +35,7 @@ public class Post {
     private PostVisibility postVisibility;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = true)
     private PostCategory category;
 
     @CreationTimestamp
