@@ -61,7 +61,7 @@ public class User implements UserDetails, Principal {
     @Column(name = "role", nullable = false)
     private UserRole userRole;
 
-    @Column(name = "is_active")
+    @Column(name = "is_active", nullable = false, columnDefinition = "boolean default false")
     private Boolean isActive;
 
     @CreationTimestamp
